@@ -1,0 +1,36 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../../../../';
+import TestLanguage from 'test-language';
+
+export const metadata: Metadata = {
+  resource: 'api.v2.projects.metric_groups',
+  operation: 'write',
+  tags: [],
+};
+
+export const tool: Tool = {
+  name: 'delete_projects_v2_api_metric_groups',
+  description: 'Delete a metric group by key.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      projectKey: {
+        type: 'string',
+        description: 'The project key',
+      },
+      metricGroupKey: {
+        type: 'string',
+        description: 'The metric group key',
+      },
+    },
+  },
+};
+
+export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+  const { metricGroupKey, ...body } = args as any;
+  return client.api.v2.projects.metricGroups.delete(metricGroupKey, body);
+};
+
+export default { metadata, tool, handler };

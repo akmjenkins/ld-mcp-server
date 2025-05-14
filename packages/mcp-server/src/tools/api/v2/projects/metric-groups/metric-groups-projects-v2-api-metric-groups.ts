@@ -1,0 +1,79 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../../../../';
+import TestLanguage from 'test-language';
+
+export const metadata: Metadata = {
+  resource: 'api.v2.projects.metric_groups',
+  operation: 'write',
+  tags: [],
+};
+
+export const tool: Tool = {
+  name: 'metric_groups_projects_v2_api_metric_groups',
+  description: 'Create a new metric group in the specified project',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      projectKey: {
+        type: 'string',
+        description: 'The project key',
+      },
+      key: {
+        type: 'string',
+        description: 'A unique key to reference the metric group',
+      },
+      kind: {
+        type: 'string',
+        description: 'The type of the metric group',
+        enum: ['funnel'],
+      },
+      maintainerId: {
+        type: 'string',
+        description: 'The ID of the member who maintains this metric group',
+      },
+      metrics: {
+        type: 'array',
+        description: 'An ordered list of the metrics in this metric group',
+        items: {
+          type: 'object',
+          properties: {
+            key: {
+              type: 'string',
+              description: 'The metric key',
+            },
+            nameInGroup: {
+              type: 'string',
+              description:
+                'Name of the metric when used within the associated metric group. Can be different from the original name of the metric',
+            },
+          },
+          required: ['key', 'nameInGroup'],
+        },
+      },
+      name: {
+        type: 'string',
+        description: 'A human-friendly name for the metric group',
+      },
+      tags: {
+        type: 'array',
+        description: 'Tags for the metric group',
+        items: {
+          type: 'string',
+        },
+      },
+      description: {
+        type: 'string',
+        description: 'Description of the metric group',
+      },
+    },
+  },
+};
+
+export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+  const { projectKey, ...body } = args as any;
+  return client.api.v2.projects.metricGroups.metricGroups(projectKey, body);
+};
+
+export default { metadata, tool, handler };
