@@ -1,0 +1,41 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../../../../../';
+import TestLanguage from 'test-language';
+
+export const metadata: Metadata = {
+  resource: 'api.v2.projects.ai_configs.variations',
+  operation: 'write',
+  tags: [],
+};
+
+export const tool: Tool = {
+  name: 'delete_ai_configs_projects_v2_api_variations',
+  description: 'Delete a specific variation of an AI Config by config key and variation key.',
+  inputSchema: {
+    type: 'object',
+    properties: {
+      projectKey: {
+        type: 'string',
+      },
+      configKey: {
+        type: 'string',
+      },
+      variationKey: {
+        type: 'string',
+      },
+      'LD-API-Version': {
+        type: 'string',
+        enum: ['beta'],
+      },
+    },
+  },
+};
+
+export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+  const { variationKey, ...body } = args as any;
+  return client.api.v2.projects.aiConfigs.variations.delete(variationKey, body);
+};
+
+export default { metadata, tool, handler };

@@ -1,0 +1,26 @@
+// File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import type { Metadata } from '../../../../';
+import TestLanguage from 'test-language';
+
+export const metadata: Metadata = {
+  resource: 'api.v2.oauth.clients',
+  operation: 'read',
+  tags: [],
+};
+
+export const tool: Tool = {
+  name: 'list_oauth_v2_api_clients',
+  description: 'Get all OAuth 2.0 clients registered by your account.',
+  inputSchema: {
+    type: 'object',
+    properties: {},
+  },
+};
+
+export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+  return client.api.v2.oauth.clients.list();
+};
+
+export default { metadata, tool, handler };
