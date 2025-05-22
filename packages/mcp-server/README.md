@@ -20,6 +20,7 @@ cd ld-mcp-server
 ```sh
 # set env vars as needed
 export TEST_LANGUAGE_API_KEY="My API Key"
+export TEST_LANGUAGE_ENVIRONMENT="production"
 node ./packages/mcp-server/dist/index.js
 ```
 
@@ -42,7 +43,8 @@ For clients with a configuration JSON, it might look something like this:
       "command": "node",
       "args": ["/path/to/local/ld-mcp-server/packages/mcp-server", "--client=claude", "--tools=dynamic"],
       "env": {
-        "TEST_LANGUAGE_API_KEY": "My API Key"
+        "TEST_LANGUAGE_API_KEY": "My API Key",
+        "TEST_LANGUAGE_ENVIRONMENT": "production"
       }
     }
   }
