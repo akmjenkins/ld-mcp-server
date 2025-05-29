@@ -12,18 +12,7 @@ export class MetricGroups extends APIResource {
   /**
    * Get results from an experiment for a particular metric group.
    *
-   * @example
-   * ```ts
-   * const response =
-   *   await client.api.v2.projects.environments.experiments.metricGroups.retrieveResults(
-   *     'metricGroupKey',
-   *     {
-   *       projectKey: 'projectKey',
-   *       environmentKey: 'environmentKey',
-   *       experimentKey: 'experimentKey',
-   *     },
-   *   );
-   * ```
+   * @deprecated
    */
   retrieveResults(
     metricGroupKey: string,
