@@ -22,18 +22,7 @@ export class Metrics extends APIResource {
    * For example, `expand=traffic` includes the `traffic` field for the project in
    * the response.
    *
-   * @example
-   * ```ts
-   * const experimentBayesianResultsRep =
-   *   await client.api.v2.projects.environments.experiments.metrics.retrieveResults(
-   *     'metricKey',
-   *     {
-   *       projectKey: 'projectKey',
-   *       environmentKey: 'environmentKey',
-   *       experimentKey: 'experimentKey',
-   *     },
-   *   );
-   * ```
+   * @deprecated
    */
   retrieveResults(
     metricKey: string,

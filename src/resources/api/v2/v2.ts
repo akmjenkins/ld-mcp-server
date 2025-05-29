@@ -291,12 +291,7 @@ export class V2 extends APIResource {
    * learn more, read
    * [Representations](https://launchdarkly.com/docs/ld-docs/api#representations).
    *
-   * @example
-   * ```ts
-   * const v2 = await client.api.v2.retrieve('environmentKey', {
-   *   projectKey: 'projectKey',
-   * });
-   * ```
+   * @deprecated
    */
   retrieve(
     environmentKey: string,

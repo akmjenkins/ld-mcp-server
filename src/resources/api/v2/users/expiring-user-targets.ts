@@ -10,14 +10,7 @@ export class ExpiringUserTargets extends APIResource {
   /**
    * Get a list of flags for which the given user is scheduled for removal.
    *
-   * @example
-   * ```ts
-   * const expiringUserTargetGetResponse =
-   *   await client.api.v2.users.expiringUserTargets.retrieve(
-   *     'environmentKey',
-   *     { projectKey: 'projectKey', userKey: 'userKey' },
-   *   );
-   * ```
+   * @deprecated
    */
   retrieve(
     environmentKey: string,
@@ -91,25 +84,7 @@ export class ExpiringUserTargets extends APIResource {
    *
    * </details>
    *
-   * @example
-   * ```ts
-   * const expiringUserTargetPatchResponse =
-   *   await client.api.v2.users.expiringUserTargets.update(
-   *     'environmentKey',
-   *     {
-   *       projectKey: 'projectKey',
-   *       userKey: 'userKey',
-   *       instructions: [
-   *         {
-   *           flagKey: 'sample-flag-key',
-   *           kind: 'addExpireUserTargetDate',
-   *           variationId:
-   *             'ce12d345-a1b2-4fb5-a123-ab123d4d5f5d',
-   *         },
-   *       ],
-   *     },
-   *   );
-   * ```
+   * @deprecated
    */
   update(
     environmentKey: string,

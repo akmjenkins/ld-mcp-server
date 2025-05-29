@@ -39,16 +39,7 @@ export class Users extends APIResource {
    * Get a user by key. The `user` object contains all attributes sent in `variation`
    * calls for that key.
    *
-   * @example
-   * ```ts
-   * const userRecord = await client.api.v2.users.retrieve(
-   *   'userKey',
-   *   {
-   *     projectKey: 'projectKey',
-   *     environmentKey: 'environmentKey',
-   *   },
-   * );
-   * ```
+   * @deprecated
    */
   retrieve(userKey: string, params: UserRetrieveParams, options?: RequestOptions): APIPromise<UserRecord> {
     const { projectKey, environmentKey } = params;
@@ -65,13 +56,7 @@ export class Users extends APIResource {
    *
    * Delete a user by key.
    *
-   * @example
-   * ```ts
-   * await client.api.v2.users.delete('userKey', {
-   *   projectKey: 'projectKey',
-   *   environmentKey: 'environmentKey',
-   * });
-   * ```
+   * @deprecated
    */
   delete(userKey: string, params: UserDeleteParams, options?: RequestOptions): APIPromise<void> {
     const { projectKey, environmentKey } = params;
