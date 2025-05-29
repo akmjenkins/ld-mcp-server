@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.approval_requests',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/approval-requests/{id}',
+  operationId: 'patchApprovalRequest',
 };
 
 export const tool: Tool = {

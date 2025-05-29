@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_configurations',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/integration-configurations/{integrationConfigurationId}',
+  operationId: 'updateIntegrationConfiguration',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.approval_requests',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/approval-requests/{id}/reviews',
+  operationId: 'postApprovalRequestReview',
 };
 
 export const tool: Tool = {

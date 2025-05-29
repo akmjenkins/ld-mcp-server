@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.destinations',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/destinations/{projectKey}/{environmentKey}/{id}',
+  operationId: 'getDestination',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.segments.exports',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/exports/{exportID}',
+  operationId: 'getBigSegmentExport',
 };
 
 export const tool: Tool = {

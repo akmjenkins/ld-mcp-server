@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath:
+    '/api/v2/projects/{projectKey}/flags/{flagKey}/environments/{environmentKey}/migration-safety-issues',
+  operationId: 'postMigrationSafetyIssues',
 };
 
 export const tool: Tool = {

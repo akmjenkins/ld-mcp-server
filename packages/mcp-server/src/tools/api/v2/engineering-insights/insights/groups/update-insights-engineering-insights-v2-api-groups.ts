@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.insights.groups',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/engineering-insights/insights/groups/{insightGroupKey}',
+  operationId: 'patchInsightGroup',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.repositories.projects',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/api/v2/engineering-insights/repositories/projects',
+  operationId: 'associateRepositoriesAndProjects',
 };
 
 export const tool: Tool = {

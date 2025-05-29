@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.metric_groups',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/projects/{projectKey}/metric-groups/{metricGroupKey}',
+  operationId: 'patchMetricGroup',
 };
 
 export const tool: Tool = {

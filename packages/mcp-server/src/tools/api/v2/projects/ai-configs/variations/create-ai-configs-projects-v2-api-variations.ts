@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs.variations',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/{configKey}/variations',
+  operationId: 'postAIConfigVariation',
 };
 
 export const tool: Tool = {

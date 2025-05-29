@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.account.relay_auto_configs',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/account/relay-auto-configs/{id}/reset',
+  operationId: 'resetRelayAutoConfig',
 };
 
 export const tool: Tool = {

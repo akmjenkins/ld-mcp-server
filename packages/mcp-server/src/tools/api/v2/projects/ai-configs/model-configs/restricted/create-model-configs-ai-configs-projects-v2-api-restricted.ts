@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs.model_configs.restricted',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/model-configs/restricted',
+  operationId: 'postRestrictedModels',
 };
 
 export const tool: Tool = {

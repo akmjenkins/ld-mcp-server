@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.experiments',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/experiments',
+  operationId: 'createExperiment',
 };
 
 export const tool: Tool = {

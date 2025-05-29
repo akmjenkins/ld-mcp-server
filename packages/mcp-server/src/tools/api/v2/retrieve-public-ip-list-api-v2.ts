@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/public-ip-list',
+  operationId: 'getIps',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.flags.expiring_targets',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/flags/{projectKey}/{featureFlagKey}/expiring-targets/{environmentKey}',
+  operationId: 'patchExpiringTargets',
 };
 
 export const tool: Tool = {

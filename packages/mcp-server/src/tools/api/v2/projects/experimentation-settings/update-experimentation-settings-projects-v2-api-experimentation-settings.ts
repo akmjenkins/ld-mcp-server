@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.experimentation_settings',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/api/v2/projects/{projectKey}/experimentation-settings',
+  operationId: 'putExperimentationSettings',
 };
 
 export const tool: Tool = {

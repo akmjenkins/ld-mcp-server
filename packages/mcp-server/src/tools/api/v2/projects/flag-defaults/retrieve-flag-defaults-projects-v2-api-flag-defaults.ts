@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flag_defaults',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/flag-defaults',
+  operationId: 'getFlagDefaultsByProject',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/followers',
+  operationId: 'getFollowersByProjEnv',
 };
 
 export const tool: Tool = {

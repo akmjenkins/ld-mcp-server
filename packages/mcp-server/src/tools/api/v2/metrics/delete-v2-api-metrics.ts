@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.metrics',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/metrics/{projectKey}/{metricKey}',
+  operationId: 'deleteMetric',
 };
 
 export const tool: Tool = {

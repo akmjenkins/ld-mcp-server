@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.context_kinds',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/api/v2/projects/{projectKey}/context-kinds/{key}',
+  operationId: 'putContextKind',
 };
 
 export const tool: Tool = {

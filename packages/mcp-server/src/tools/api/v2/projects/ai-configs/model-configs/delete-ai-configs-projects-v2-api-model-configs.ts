@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs.model_configs',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/model-configs/{modelConfigKey}',
+  operationId: 'deleteModelConfig',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.account.relay_auto_configs',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/account/relay-auto-configs/{id}',
+  operationId: 'getRelayProxyConfig',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.metric_groups',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/projects/{projectKey}/metric-groups/{metricGroupKey}',
+  operationId: 'deleteMetricGroup',
 };
 
 export const tool: Tool = {

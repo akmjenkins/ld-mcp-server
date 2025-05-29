@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.auditlog',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/auditlog/{id}',
+  operationId: 'getAuditLogEntry',
 };
 
 export const tool: Tool = {

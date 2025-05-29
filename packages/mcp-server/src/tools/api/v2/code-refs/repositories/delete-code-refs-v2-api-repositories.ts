@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.code_refs.repositories',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/code-refs/repositories/{repo}',
+  operationId: 'deleteRepository',
 };
 
 export const tool: Tool = {

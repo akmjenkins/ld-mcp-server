@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.segments.expiring_user_targets',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/segments/{projectKey}/{segmentKey}/expiring-user-targets/{environmentKey}',
+  operationId: 'getExpiringUserTargetsForSegment',
 };
 
 export const tool: Tool = {

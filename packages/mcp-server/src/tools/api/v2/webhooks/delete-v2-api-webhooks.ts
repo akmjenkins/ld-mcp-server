@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.webhooks',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/webhooks/{id}',
+  operationId: 'deleteWebhook',
 };
 
 export const tool: Tool = {

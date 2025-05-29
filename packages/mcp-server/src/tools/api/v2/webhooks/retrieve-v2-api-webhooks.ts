@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.webhooks',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/webhooks/{id}',
+  operationId: 'getWebhook',
 };
 
 export const tool: Tool = {

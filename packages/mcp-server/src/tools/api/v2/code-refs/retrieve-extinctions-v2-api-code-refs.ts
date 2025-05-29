@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.code_refs',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/code-refs/extinctions',
+  operationId: 'getExtinctions',
 };
 
 export const tool: Tool = {

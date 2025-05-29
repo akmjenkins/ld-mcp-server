@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.usage.mau',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/usage/mau/sdks',
+  operationId: 'getMauSdksByType',
 };
 
 export const tool: Tool = {

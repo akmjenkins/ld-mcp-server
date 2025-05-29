@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.metric_groups',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/metric-groups',
+  operationId: 'getMetricGroups',
 };
 
 export const tool: Tool = {

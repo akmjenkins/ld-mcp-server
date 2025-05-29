@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.segments.contexts',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/contexts',
+  operationId: 'updateBigSegmentContextTargets',
 };
 
 export const tool: Tool = {

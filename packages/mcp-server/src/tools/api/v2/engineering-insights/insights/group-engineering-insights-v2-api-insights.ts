@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.insights',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/engineering-insights/insights/group',
+  operationId: 'createInsightGroup',
 };
 
 export const tool: Tool = {

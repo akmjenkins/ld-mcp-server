@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/user-search/{projectKey}/{environmentKey}',
+  operationId: 'getSearchUsers',
 };
 
 export const tool: Tool = {

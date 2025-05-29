@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.roles',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/roles/{customRoleKey}',
+  operationId: 'deleteCustomRole',
 };
 
 export const tool: Tool = {

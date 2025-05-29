@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/{configKey}',
+  operationId: 'patchAIConfig',
 };
 
 export const tool: Tool = {

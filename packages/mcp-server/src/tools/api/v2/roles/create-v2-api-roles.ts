@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.roles',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/roles',
+  operationId: 'postCustomRole',
 };
 
 export const tool: Tool = {

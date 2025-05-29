@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments.approval_requests',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath:
+    '/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/approval-requests/{id}',
+  operationId: 'patchFlagConfigApprovalRequest',
 };
 
 export const tool: Tool = {

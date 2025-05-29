@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.templates',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/templates/{templateKey}',
+  operationId: 'deleteWorkflowTemplate',
 };
 
 export const tool: Tool = {

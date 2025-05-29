@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments.workflows',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows',
+  operationId: 'postWorkflow',
 };
 
 export const tool: Tool = {
