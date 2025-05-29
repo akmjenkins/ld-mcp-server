@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.roles',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/roles/{customRoleKey}',
+  operationId: 'patchCustomRole',
 };
 
 export const tool: Tool = {

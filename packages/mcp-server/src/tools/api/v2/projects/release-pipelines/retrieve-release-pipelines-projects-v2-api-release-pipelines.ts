@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.release_pipelines',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/release-pipelines',
+  operationId: 'getAllReleasePipelines',
 };
 
 export const tool: Tool = {

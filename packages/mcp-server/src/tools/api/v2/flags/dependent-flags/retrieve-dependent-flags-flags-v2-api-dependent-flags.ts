@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.flags.dependent_flags',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/flags/{projectKey}/{featureFlagKey}/dependent-flags',
+  operationId: 'getDependentFlags',
 };
 
 export const tool: Tool = {

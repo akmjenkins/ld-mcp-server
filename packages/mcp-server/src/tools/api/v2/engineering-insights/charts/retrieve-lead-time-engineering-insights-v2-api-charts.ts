@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.charts',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/engineering-insights/charts/lead-time',
+  operationId: 'getLeadTimeChart',
 };
 
 export const tool: Tool = {

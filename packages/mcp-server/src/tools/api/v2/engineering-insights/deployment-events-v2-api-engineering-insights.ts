@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/engineering-insights/deployment-events',
+  operationId: 'createDeploymentEvent',
 };
 
 export const tool: Tool = {

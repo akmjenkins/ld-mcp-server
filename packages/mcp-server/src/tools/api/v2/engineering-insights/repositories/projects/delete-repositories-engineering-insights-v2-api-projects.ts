@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.repositories.projects',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/engineering-insights/repositories/{repositoryKey}/projects/{projectKey}',
+  operationId: 'deleteRepositoryProject',
 };
 
 export const tool: Tool = {

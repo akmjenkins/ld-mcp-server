@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integrations',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/integrations/{integrationKey}/{id}',
+  operationId: 'deleteSubscription',
 };
 
 export const tool: Tool = {

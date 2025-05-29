@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.applications.versions',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/applications/{applicationKey}/versions/{versionKey}',
+  operationId: 'patchApplicationVersion',
 };
 
 export const tool: Tool = {

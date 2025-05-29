@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments.workflows',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath:
+    '/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/workflows/{workflowId}',
+  operationId: 'deleteWorkflow',
 };
 
 export const tool: Tool = {

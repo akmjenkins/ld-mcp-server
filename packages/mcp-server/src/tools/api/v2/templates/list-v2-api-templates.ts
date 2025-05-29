@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.templates',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/templates',
+  operationId: 'getWorkflowTemplates',
 };
 
 export const tool: Tool = {

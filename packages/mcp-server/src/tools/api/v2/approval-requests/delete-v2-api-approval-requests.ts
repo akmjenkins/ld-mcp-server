@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.approval_requests',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/approval-requests/{id}',
+  operationId: 'deleteApprovalRequest',
 };
 
 export const tool: Tool = {

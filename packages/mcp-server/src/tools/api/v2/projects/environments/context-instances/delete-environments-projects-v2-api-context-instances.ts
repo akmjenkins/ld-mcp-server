@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.context_instances',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/context-instances/{id}',
+  operationId: 'deleteContextInstances',
 };
 
 export const tool: Tool = {

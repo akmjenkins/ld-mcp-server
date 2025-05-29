@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.feature_store',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/integration-capabilities/featureStore',
+  operationId: 'getIntegrationDeliveryConfigurations',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.code_refs.repositories.branches',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/api/v2/code-refs/repositories/{repo}/branches/{branch}',
+  operationId: 'putBranch',
 };
 
 export const tool: Tool = {

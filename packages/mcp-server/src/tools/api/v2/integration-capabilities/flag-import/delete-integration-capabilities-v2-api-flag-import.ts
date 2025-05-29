@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.flag_import',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}',
+  operationId: 'deleteFlagImportConfiguration',
 };
 
 export const tool: Tool = {

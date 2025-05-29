@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.release',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath: '/api/v2/projects/{projectKey}/flags/{flagKey}/release',
+  operationId: 'createReleaseForFlag',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.usage.streams',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/usage/streams/{source}',
+  operationId: 'getStreamUsage',
 };
 
 export const tool: Tool = {

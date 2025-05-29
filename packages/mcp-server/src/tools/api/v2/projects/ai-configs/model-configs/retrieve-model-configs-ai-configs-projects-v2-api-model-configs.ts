@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs.model_configs',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/model-configs',
+  operationId: 'listModelConfigs',
 };
 
 export const tool: Tool = {

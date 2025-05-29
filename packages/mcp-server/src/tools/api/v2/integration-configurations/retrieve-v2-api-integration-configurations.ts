@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_configurations',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/integration-configurations/{integrationConfigurationId}',
+  operationId: 'getIntegrationConfiguration',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.oauth.clients',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/oauth/clients/{clientId}',
+  operationId: 'getOAuthClientById',
 };
 
 export const tool: Tool = {

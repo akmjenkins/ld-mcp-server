@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.context_attributes',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/context-attributes',
+  operationId: 'getContextAttributeNames',
 };
 
 export const tool: Tool = {

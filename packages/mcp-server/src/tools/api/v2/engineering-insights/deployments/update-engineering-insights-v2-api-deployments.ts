@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.deployments',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/engineering-insights/deployments/{deploymentID}',
+  operationId: 'updateDeployment',
 };
 
 export const tool: Tool = {

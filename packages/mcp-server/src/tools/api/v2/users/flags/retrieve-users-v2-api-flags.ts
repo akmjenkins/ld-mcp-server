@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.users.flags',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/users/{projectKey}/{environmentKey}/{userKey}/flags/{featureFlagKey}',
+  operationId: 'getUserFlagSetting',
 };
 
 export const tool: Tool = {

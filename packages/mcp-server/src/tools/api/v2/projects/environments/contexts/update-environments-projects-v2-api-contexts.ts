@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.contexts',
   operation: 'write',
   tags: [],
+  httpMethod: 'put',
+  httpPath:
+    '/api/v2/projects/{projectKey}/environments/{environmentKey}/contexts/{contextKind}/{contextKey}/flags/{featureFlagKey}',
+  operationId: 'putContextFlagSetting',
 };
 
 export const tool: Tool = {

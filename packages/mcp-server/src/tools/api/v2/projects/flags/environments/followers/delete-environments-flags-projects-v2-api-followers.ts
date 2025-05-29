@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments.followers',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath:
+    '/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/followers/{memberId}',
+  operationId: 'deleteFlagFollower',
 };
 
 export const tool: Tool = {

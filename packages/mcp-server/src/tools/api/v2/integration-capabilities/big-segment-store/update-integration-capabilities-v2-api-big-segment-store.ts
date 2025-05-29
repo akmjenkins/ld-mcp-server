@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.big_segment_store',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath:
+    '/api/v2/integration-capabilities/big-segment-store/{projectKey}/{environmentKey}/{integrationKey}/{integrationId}',
+  operationId: 'patchBigSegmentStoreIntegration',
 };
 
 export const tool: Tool = {

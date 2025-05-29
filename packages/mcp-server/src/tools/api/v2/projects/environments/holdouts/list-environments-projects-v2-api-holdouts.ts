@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.holdouts',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts',
+  operationId: 'getAllHoldouts',
 };
 
 export const tool: Tool = {

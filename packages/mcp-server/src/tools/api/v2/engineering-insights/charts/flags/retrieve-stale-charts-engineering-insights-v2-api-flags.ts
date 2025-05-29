@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.charts.flags',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/engineering-insights/charts/flags/stale',
+  operationId: 'getStaleFlagsChart',
 };
 
 export const tool: Tool = {

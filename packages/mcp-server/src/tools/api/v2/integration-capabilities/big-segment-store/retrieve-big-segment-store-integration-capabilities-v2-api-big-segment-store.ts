@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.big_segment_store',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/integration-capabilities/big-segment-store',
+  operationId: 'getBigSegmentStoreIntegrations',
 };
 
 export const tool: Tool = {

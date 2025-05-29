@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.context_instances',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/context-instances/search',
+  operationId: 'searchContextInstances',
 };
 
 export const tool: Tool = {

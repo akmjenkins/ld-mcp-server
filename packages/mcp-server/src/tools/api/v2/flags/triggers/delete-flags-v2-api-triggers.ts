@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.flags.triggers',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey}/{id}',
+  operationId: 'deleteTriggerWorkflow',
 };
 
 export const tool: Tool = {

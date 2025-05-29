@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.feature_store',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath:
+    '/api/v2/integration-capabilities/featureStore/{projectKey}/{environmentKey}/{integrationKey}/{id}/validate',
+  operationId: 'validateIntegrationDeliveryConfiguration',
 };
 
 export const tool: Tool = {

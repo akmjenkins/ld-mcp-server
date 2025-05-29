@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.approval_requests',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/approval-requests',
+  operationId: 'getApprovalRequests',
 };
 
 export const tool: Tool = {

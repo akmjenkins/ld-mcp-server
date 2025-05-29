@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.environments.holdouts',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/projects/{projectKey}/environments/{environmentKey}/holdouts/{holdoutKey}',
+  operationId: 'patchHoldout',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.code_refs.repositories',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/code-refs/repositories',
+  operationId: 'postRepository',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.flags.triggers',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/flags/{projectKey}/{featureFlagKey}/triggers/{environmentKey}/{id}',
+  operationId: 'getTriggerWorkflowById',
 };
 
 export const tool: Tool = {

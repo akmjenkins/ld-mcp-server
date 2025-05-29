@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.flags.environments.scheduled_changes',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath:
+    '/api/v2/projects/{projectKey}/flags/{featureFlagKey}/environments/{environmentKey}/scheduled-changes',
+  operationId: 'postFlagConfigScheduledChanges',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.flags',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/flags/{projectKey}/{featureFlagKey}',
+  operationId: 'patchFeatureFlag',
 };
 
 export const tool: Tool = {

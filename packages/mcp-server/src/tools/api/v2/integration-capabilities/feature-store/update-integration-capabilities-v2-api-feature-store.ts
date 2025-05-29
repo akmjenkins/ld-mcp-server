@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.feature_store',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath:
+    '/api/v2/integration-capabilities/featureStore/{projectKey}/{environmentKey}/{integrationKey}/{id}',
+  operationId: 'patchIntegrationDeliveryConfiguration',
 };
 
 export const tool: Tool = {

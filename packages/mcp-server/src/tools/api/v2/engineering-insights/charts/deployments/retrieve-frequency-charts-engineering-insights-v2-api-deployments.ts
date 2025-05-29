@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.charts.deployments',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/engineering-insights/charts/deployments/frequency',
+  operationId: 'getDeploymentFrequencyChart',
 };
 
 export const tool: Tool = {

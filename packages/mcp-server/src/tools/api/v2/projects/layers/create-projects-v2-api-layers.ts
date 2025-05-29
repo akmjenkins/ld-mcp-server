@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.layers',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/layers',
+  operationId: 'createLayer',
 };
 
 export const tool: Tool = {

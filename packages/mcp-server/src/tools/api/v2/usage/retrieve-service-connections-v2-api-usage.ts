@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.usage',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/usage/service-connections',
+  operationId: 'getServiceConnectionUsage',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.segments.contexts',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/segments/{projectKey}/{environmentKey}/{segmentKey}/contexts/{contextKey}',
+  operationId: 'getSegmentMembershipForContext',
 };
 
 export const tool: Tool = {

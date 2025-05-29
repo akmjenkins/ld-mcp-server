@@ -8,6 +8,10 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.flag_import',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath:
+    '/api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}/trigger',
+  operationId: 'triggerFlagImportJob',
 };
 
 export const tool: Tool = {

@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_capabilities.flag_import',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/integration-capabilities/flag-import/{projectKey}/{integrationKey}/{integrationId}',
+  operationId: 'getFlagImportConfiguration',
 };
 
 export const tool: Tool = {

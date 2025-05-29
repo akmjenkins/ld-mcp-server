@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.roles',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/roles/{customRoleKey}',
+  operationId: 'getCustomRole',
 };
 
 export const tool: Tool = {

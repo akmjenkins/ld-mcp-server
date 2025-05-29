@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.destinations',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/destinations/generate-warehouse-destination-key-pair',
+  operationId: 'postGenerateWarehouseDestinationKeyPair',
 };
 
 export const tool: Tool = {

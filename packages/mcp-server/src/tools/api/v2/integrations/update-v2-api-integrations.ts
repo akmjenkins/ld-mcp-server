@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integrations',
   operation: 'write',
   tags: [],
+  httpMethod: 'patch',
+  httpPath: '/api/v2/integrations/{integrationKey}/{id}',
+  operationId: 'updateSubscription',
 };
 
 export const tool: Tool = {

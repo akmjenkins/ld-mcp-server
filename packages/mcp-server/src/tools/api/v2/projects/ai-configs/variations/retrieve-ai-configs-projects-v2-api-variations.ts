@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs.variations',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs/{configKey}/variations/{variationKey}',
+  operationId: 'getAIConfigVariation',
 };
 
 export const tool: Tool = {

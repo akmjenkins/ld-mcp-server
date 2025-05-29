@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_configurations.keys',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/integration-configurations/keys/{integrationKey}',
+  operationId: 'createIntegrationConfiguration',
 };
 
 export const tool: Tool = {
