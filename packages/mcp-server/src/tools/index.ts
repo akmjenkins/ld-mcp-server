@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import TestLanguage from 'test-language';
-import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import { Metadata, Endpoint, HandlerFunction } from './types';
+
+export { Metadata, Endpoint, HandlerFunction };
 
 import retrieve_api_v2 from './api/v2/retrieve-api-v2';
 import list_api_v2 from './api/v2/list-api-v2';
@@ -286,27 +287,6 @@ import delete_insights_engineering_insights_v2_api_groups from './api/v2/enginee
 import list_engineering_insights_v2_api_repositories from './api/v2/engineering-insights/repositories/list-engineering-insights-v2-api-repositories';
 import create_repositories_engineering_insights_v2_api_projects from './api/v2/engineering-insights/repositories/projects/create-repositories-engineering-insights-v2-api-projects';
 import delete_repositories_engineering_insights_v2_api_projects from './api/v2/engineering-insights/repositories/projects/delete-repositories-engineering-insights-v2-api-projects';
-
-export type HandlerFunction = (
-  client: TestLanguage,
-  args: Record<string, unknown> | undefined,
-) => Promise<any>;
-
-export type Metadata = {
-  resource: string;
-  operation: 'read' | 'write';
-  tags: string[];
-
-  httpMethod?: string;
-  httpPath?: string;
-  operationId?: string;
-};
-
-export type Endpoint = {
-  metadata: Metadata;
-  tool: Tool;
-  handler: HandlerFunction;
-};
 
 export const endpoints: Endpoint[] = [];
 

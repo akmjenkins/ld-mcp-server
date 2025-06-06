@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../../';
 import TestLanguage from 'test-language';
@@ -40,9 +42,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { source, ...body } = args as any;
-  return client.api.v2.usage.streams.retrieve(source, body);
+  return asTextContentResult(await client.api.v2.usage.streams.retrieve(source, body));
 };
 
 export default { metadata, tool, handler };
