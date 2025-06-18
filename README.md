@@ -1,6 +1,6 @@
 # Test Language TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/test-language.svg)](https://npmjs.org/package/test-language) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/test-language)
+[![NPM version](<https://img.shields.io/npm/v/test-language.svg?label=npm%20(stable)>)](https://npmjs.org/package/test-language) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/test-language)
 
 This library provides convenient access to the Test Language REST API from server-side TypeScript or JavaScript.
 
