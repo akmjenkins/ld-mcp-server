@@ -46,7 +46,7 @@ export interface SegmentEvaluateResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   items: Array<SegmentEvaluateResponse.Item>;
 }
@@ -56,7 +56,7 @@ export namespace SegmentEvaluateResponse {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * A description of the segment's purpose
@@ -114,7 +114,7 @@ export interface SegmentEvaluateParams {
   /**
    * Body param:
    */
-  body: Record<string, unknown>;
+  body: { [key: string]: unknown };
 }
 
 export declare namespace Segments {

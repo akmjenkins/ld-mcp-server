@@ -1652,7 +1652,7 @@ export interface FeatureFlag {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Version of the feature flag
@@ -1674,7 +1674,7 @@ export interface FeatureFlag {
    * associated with a name and array of values for the metadata to associate with
    * this flag. Typically used to store data related to an integration.
    */
-  customProperties: Record<string, FeatureFlag.CustomProperties>;
+  customProperties: { [key: string]: FeatureFlag.CustomProperties };
 
   /**
    * Experimentation data for the feature flag
@@ -1760,7 +1760,7 @@ export interface FeatureFlag {
    * Details on the environments for this flag. Only returned if the request is
    * filtered by environment, using the <code>filterEnv</code> query parameter.
    */
-  environments?: Record<string, FeatureFlag.Environments>;
+  environments?: { [key: string]: FeatureFlag.Environments };
 
   /**
    * @deprecated Deprecated, use <code>experiments</code> instead
@@ -1813,7 +1813,7 @@ export namespace FeatureFlag {
 
   export namespace Experiments {
     export interface Item {
-      _environmentSettings?: Record<string, Item._EnvironmentSettings>;
+      _environmentSettings?: { [key: string]: Item._EnvironmentSettings };
 
       _metric?: MetricsAPI.MetricListingRep;
 
@@ -1858,7 +1858,7 @@ export namespace FeatureFlag {
     /**
      * The location and content type of related resources
      */
-    _links?: Record<string, StatisticsAPI.Link>;
+    _links?: { [key: string]: StatisticsAPI.Link };
   }
 
   export interface Environments {
@@ -1978,7 +1978,7 @@ export namespace FeatureFlag {
       /**
        * A summary of the variations for this flag
        */
-      variations: Record<string, _Summary.Variations>;
+      variations: { [key: string]: _Summary.Variations };
     }
 
     export namespace _Summary {

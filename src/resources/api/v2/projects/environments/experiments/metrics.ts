@@ -41,7 +41,7 @@ export interface ExperimentBayesianResultsRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   metricSeen?: ExperimentBayesianResultsRep.MetricSeen;
 
@@ -269,7 +269,7 @@ export namespace TreatmentResultRep {
      * of the distribution are 'mu' and 'sigma'. When <code>kind</code> is
      * <code>beta</code>, the parameters of the distribution are 'alpha' and 'beta.'
      */
-    parameters?: Record<string, number>;
+    parameters?: { [key: string]: number };
   }
 
   export interface RelativeDifference {

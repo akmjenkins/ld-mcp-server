@@ -748,7 +748,7 @@ export interface ProjectSummary {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The project key
@@ -786,7 +786,7 @@ export interface Team {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The team version
@@ -829,7 +829,7 @@ export interface Team {
   /**
    * A map of role attributes for the team
    */
-  roleAttributes?: Record<string, Array<string>>;
+  roleAttributes?: { [key: string]: Array<string> };
 
   /**
    * Paginated list of the custom roles assigned to this team. Only included if
@@ -855,7 +855,7 @@ export interface TeamCustomRoles {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of the custom roles that have been assigned to this team
@@ -897,7 +897,7 @@ export interface TeamMaintainers {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the members that have been assigned as maintainers of the team
@@ -929,7 +929,7 @@ export interface TeamListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The number of teams
@@ -972,7 +972,7 @@ export interface TeamPatchAllResponse {
   /**
    * A list of team keys and errors for the teams whose updates failed.
    */
-  errors?: Array<Record<string, string>>;
+  errors?: Array<{ [key: string]: string }>;
 
   /**
    * A list of member IDs of the members who were added to the teams.
@@ -1026,7 +1026,7 @@ export interface TeamCreateParams {
   /**
    * Body param: A map of role attributes for the team
    */
-  roleAttributes?: Record<string, Array<string>>;
+  roleAttributes?: { [key: string]: Array<string> };
 }
 
 export namespace TeamCreateParams {
@@ -1065,7 +1065,7 @@ export interface TeamUpdateParams {
    * with objects that look like <code>{"kind": "update_action"}</code>. Some
    * instructions also require additional parameters as part of this object.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Query param: A comma-separated list of properties that can reveal additional
@@ -1116,7 +1116,7 @@ export interface TeamPatchAllParams {
    * that look like <code>{"kind": "update_action"}</code>. Some instructions also
    * require additional parameters as part of this object.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Optional comment describing the update

@@ -62,7 +62,7 @@ export interface RepositoryListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export namespace RepositoryListResponse {
@@ -106,7 +106,7 @@ export namespace RepositoryListResponse {
 
       totalCount: number;
 
-      _links?: Record<string, StatisticsAPI.Link>;
+      _links?: { [key: string]: StatisticsAPI.Link };
     }
   }
 }

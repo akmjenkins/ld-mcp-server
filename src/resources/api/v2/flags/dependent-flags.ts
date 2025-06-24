@@ -42,7 +42,7 @@ export interface DependentFlagRetrieveDependentFlagsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on how to access the prerequisite flag in the LaunchDarkly UI
@@ -78,7 +78,7 @@ export namespace DependentFlagRetrieveDependentFlagsResponse {
       /**
        * The location and content type of related resources
        */
-      _links: Record<string, StatisticsAPI.Link>;
+      _links: { [key: string]: StatisticsAPI.Link };
 
       /**
        * Details on how to access the dependent flag in this environment in the

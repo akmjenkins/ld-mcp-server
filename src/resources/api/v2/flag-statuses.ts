@@ -36,7 +36,7 @@ export class FlagStatuses extends APIResource {
 }
 
 export interface FlagStatusRep {
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Status of the flag

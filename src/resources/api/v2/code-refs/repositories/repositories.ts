@@ -137,7 +137,7 @@ export class Repositories extends APIResource {
 }
 
 export interface RepositoryRep {
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * The repository's default branch
@@ -188,7 +188,7 @@ export interface RepositoryRep {
 }
 
 export interface RepositoryListResponse {
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of repositories

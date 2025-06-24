@@ -62,7 +62,7 @@ export interface WorkflowTemplateOutput {
 
   _key: string;
 
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   _maintainerId: string;
 

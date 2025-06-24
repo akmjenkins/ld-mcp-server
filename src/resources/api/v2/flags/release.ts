@@ -153,7 +153,7 @@ export interface EnvironmentSummary {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The color used to indicate this environment in the UI
@@ -207,7 +207,7 @@ export interface Release {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The chosen release variation ID to use across all phases of a release
@@ -289,7 +289,7 @@ export namespace Release {
       /**
        * The location and content type of related resources
        */
-      _links?: Record<string, StatisticsAPI.Link>;
+      _links?: { [key: string]: StatisticsAPI.Link };
 
       /**
        * The rules IDs added or updated by this audience

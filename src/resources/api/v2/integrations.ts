@@ -81,7 +81,7 @@ export interface Integration {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the most recent successes and errors for this integration
@@ -98,7 +98,7 @@ export interface Integration {
    * <code>formVariables</code> field in the corresponding <code>manifest.json</code>
    * for a full list of fields for each integration.
    */
-  config?: Record<string, unknown>;
+  config?: { [key: string]: unknown };
 
   /**
    * The type of integration

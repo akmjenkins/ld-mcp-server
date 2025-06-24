@@ -55,13 +55,13 @@ export interface StatisticRetrieveResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, Link>;
+  _links: { [key: string]: Link };
 
   /**
    * A map of flag keys to a list of code reference statistics for each code
    * repository in which the flag key appears
    */
-  flags: Record<string, Array<StatisticRetrieveResponse.Flag>>;
+  flags: { [key: string]: Array<StatisticRetrieveResponse.Flag> };
 }
 
 export namespace StatisticRetrieveResponse {
@@ -69,7 +69,7 @@ export namespace StatisticRetrieveResponse {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * The repository's default branch

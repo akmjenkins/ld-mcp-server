@@ -31,7 +31,7 @@ export interface MetricGroupRetrieveResultsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An ordered list of the metrics in this metric group, and each of their results

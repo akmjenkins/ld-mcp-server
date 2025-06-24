@@ -350,7 +350,7 @@ export interface Environment {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The SDK key for the environment. Use this for authorization in server-side SDKs.
@@ -424,7 +424,7 @@ export interface Environment {
   /**
    * Details on the approval settings for this environment for each resource kind
    */
-  resourceApprovalSettings?: Record<string, ApprovalRequestsAPI.ApprovalSettings>;
+  resourceApprovalSettings?: { [key: string]: ApprovalRequestsAPI.ApprovalSettings };
 }
 
 export interface EnvironmentPost {
@@ -517,7 +517,7 @@ export interface Environments {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The number of environments returned
@@ -529,7 +529,7 @@ export interface EnvironmentRetrieveFollowersResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of flags and their followers

@@ -129,7 +129,7 @@ export interface CustomRole {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The key of the custom role
@@ -211,7 +211,7 @@ export interface RoleListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The total number of custom roles

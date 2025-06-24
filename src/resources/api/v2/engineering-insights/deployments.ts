@@ -128,7 +128,7 @@ export interface DeploymentCollectionRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface DeploymentRep {
@@ -225,7 +225,7 @@ export interface DeploymentRep {
   /**
    * The metadata associated with the deployment
    */
-  metadata?: Record<string, unknown>;
+  metadata?: { [key: string]: unknown };
 
   /**
    * The pull requests contained in the deployment

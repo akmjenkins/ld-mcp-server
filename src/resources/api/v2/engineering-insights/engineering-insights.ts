@@ -147,7 +147,7 @@ export interface PullRequestCollectionRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface PullRequestRep {
@@ -338,7 +338,7 @@ export interface EngineeringInsightRetrieveFlagEventsResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export namespace EngineeringInsightRetrieveFlagEventsResponse {
@@ -507,7 +507,7 @@ export namespace EngineeringInsightRetrieveFlagEventsResponse {
         /**
          * The location and content type of related resources
          */
-        _links?: Record<string, StatisticsAPI.Link>;
+        _links?: { [key: string]: StatisticsAPI.Link };
       }
 
       export namespace Item {
@@ -533,7 +533,7 @@ export namespace EngineeringInsightRetrieveFlagEventsResponse {
           /**
            * The location and content type of related resources
            */
-          _links?: Record<string, StatisticsAPI.Link>;
+          _links?: { [key: string]: StatisticsAPI.Link };
 
           /**
            * Timestamp of when the iteration ended
@@ -616,12 +616,12 @@ export interface EngineeringInsightDeploymentEventsParams {
   /**
    * A JSON object containing metadata about the deployment
    */
-  deploymentMetadata?: Record<string, unknown>;
+  deploymentMetadata?: { [key: string]: unknown };
 
   /**
    * A JSON object containing metadata about the event
    */
-  eventMetadata?: Record<string, unknown>;
+  eventMetadata?: { [key: string]: unknown };
 
   /**
    * The time, in Unix milliseconds, when the event occurred. If not included, the

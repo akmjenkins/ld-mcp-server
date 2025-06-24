@@ -245,7 +245,7 @@ export interface InsightRetrieveScoresResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface InsightGroupParams {

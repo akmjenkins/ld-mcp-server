@@ -119,7 +119,7 @@ export interface SeriesIntervalsRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * An array of timestamps and values for a given meter
@@ -145,12 +145,12 @@ export interface SeriesListRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * Metadata about each series
    */
-  metadata: Array<Record<string, unknown>>;
+  metadata: Array<{ [key: string]: unknown }>;
 
   /**
    * An array of data points with timestamps. Each element of the array is an object
@@ -158,7 +158,7 @@ export interface SeriesListRep {
    * If there are multiple key fields, they are labeled '0', '1', and so on, and are
    * explained in the <code>metadata</code>.
    */
-  series: Array<Record<string, number>>;
+  series: Array<{ [key: string]: number }>;
 }
 
 export interface UsageRetrieveParams {

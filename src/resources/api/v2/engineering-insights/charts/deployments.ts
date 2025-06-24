@@ -60,7 +60,7 @@ export namespace InsightsChart {
     /**
      * Metadata values
      */
-    summary: Record<string, unknown>;
+    summary: { [key: string]: unknown };
 
     /**
      * X-axis metadata
@@ -75,7 +75,7 @@ export namespace InsightsChart {
     /**
      * Metrics for the given chart data, included when expanded
      */
-    metrics?: Record<string, Metadata.Metrics>;
+    metrics?: { [key: string]: Metadata.Metrics };
 
     /**
      * Name of the chart
@@ -153,7 +153,7 @@ export namespace InsightsChart {
       /**
        * Additional values for the data point
        */
-      values?: Record<string, unknown>;
+      values?: { [key: string]: unknown };
     }
 
     /**

@@ -458,7 +458,7 @@ export interface Member {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Whether the member has a pending invitation
@@ -543,7 +543,7 @@ export interface Member {
   /**
    * The role attributes for the member
    */
-  roleAttributes?: Record<string, Array<string>>;
+  roleAttributes?: { [key: string]: Array<string> };
 
   /**
    * Details on the teams this member is assigned to
@@ -606,14 +606,14 @@ export interface MemberTeamSummaryRep {
    */
   name: string;
 
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface Members {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of members
@@ -630,7 +630,7 @@ export interface MemberPatchAllResponse {
   /**
    * A list of member IDs and errors for the members whose updates failed.
    */
-  errors?: Array<Record<string, string>>;
+  errors?: Array<{ [key: string]: string }>;
 
   /**
    * A list of members IDs of the members who were successfully updated.
@@ -677,7 +677,7 @@ export namespace MemberCreateParams {
     /**
      * An object of role attributes for the member
      */
-    roleAttributes?: Record<string, Array<string>>;
+    roleAttributes?: { [key: string]: Array<string> };
 
     /**
      * An array of the member's teams
@@ -736,7 +736,7 @@ export interface MemberPatchAllParams {
    * that look like <code>{"kind": "update_action"}</code>. Some instructions also
    * require additional parameters as part of this object.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Optional comment describing the update

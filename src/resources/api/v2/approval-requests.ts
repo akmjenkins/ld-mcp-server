@@ -253,7 +253,7 @@ export interface ApprovalRequestResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * Version of the approval request
@@ -278,7 +278,7 @@ export interface ApprovalRequestResponse {
   /**
    * List of instructions in semantic patch format to be applied to the feature flag
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * An array of member IDs. These members are notified to review the approval
@@ -399,7 +399,7 @@ export interface ApprovalSettings {
    */
   requiredApprovalTags: Array<string>;
 
-  serviceConfig: Record<string, unknown>;
+  serviceConfig: { [key: string]: unknown };
 
   /**
    * Which service to use for managing approvals
@@ -429,7 +429,7 @@ export interface Conflict {
   /**
    * Instruction in semantic patch format to be applied to the feature flag
    */
-  instruction?: Record<string, unknown>;
+  instruction?: { [key: string]: unknown };
 
   /**
    * Reason why the conflict exists
@@ -487,7 +487,7 @@ export interface ExpandableApprovalRequestResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * Version of the approval request
@@ -512,7 +512,7 @@ export interface ExpandableApprovalRequestResponse {
   /**
    * List of instructions in semantic patch format to be applied to the feature flag
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * An array of member IDs. These members are notified to review the approval
@@ -656,7 +656,7 @@ export interface ExpandedFlagRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Version of the feature flag
@@ -678,7 +678,7 @@ export interface ExpandedFlagRep {
    * associated with a name and array of values for the metadata to associate with
    * this flag. Typically used to store data related to an integration.
    */
-  customProperties: Record<string, ExpandedFlagRep.CustomProperties>;
+  customProperties: { [key: string]: ExpandedFlagRep.CustomProperties };
 
   /**
    * A unique key used to reference the flag in your code
@@ -773,7 +773,7 @@ export interface FlagConfigApprovalRequestResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * Version of the approval request
@@ -798,7 +798,7 @@ export interface FlagConfigApprovalRequestResponse {
   /**
    * List of instructions in semantic patch format to be applied to the feature flag
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * An array of member IDs. These members are notified to review the approval
@@ -949,7 +949,7 @@ export interface ApprovalRequestRetrieveApprovalRequestsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of approval requests
@@ -989,7 +989,7 @@ export interface ApprovalRequestApprovalRequestsParams {
    * [Update feature flag](https://launchdarkly.com/docs/ld-docs/api/feature-flags/patch-feature-flag)
    * documentation for details on available instructions.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * String representation of the resource specifier
@@ -1007,7 +1007,7 @@ export interface ApprovalRequestApprovalRequestsParams {
    * additional fields will be described in the <code>manifest.json</code> for that
    * integration, at https://github.com/launchdarkly/integration-framework.
    */
-  integrationConfig?: Record<string, unknown>;
+  integrationConfig?: { [key: string]: unknown };
 
   /**
    * An array of member IDs. These members are notified to review the approval

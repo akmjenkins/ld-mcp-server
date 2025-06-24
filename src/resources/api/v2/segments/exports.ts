@@ -69,7 +69,7 @@ export interface ExportRetrieveResponse {
    * The location and content type of related resources, including the location of
    * the exported file
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Timestamp of when this export was created

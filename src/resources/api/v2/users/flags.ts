@@ -72,7 +72,7 @@ export interface FlagRetrieveResponse {
   /**
    * The location and content type of related resources.
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The value of the flag variation that the user receives. If there is no defined
@@ -135,12 +135,12 @@ export interface FlagListResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of flag settings for the user
    */
-  items: Record<string, FlagListResponse.Items>;
+  items: { [key: string]: FlagListResponse.Items };
 }
 
 export namespace FlagListResponse {
@@ -148,7 +148,7 @@ export namespace FlagListResponse {
     /**
      * The location and content type of related resources.
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * The value of the flag variation that the user receives. If there is no defined

@@ -153,7 +153,7 @@ export interface IntegrationDeliveryConfiguration {
    * <code>formVariables</code> field in the corresponding <code>manifest.json</code>
    * for a full list of fields for each integration.
    */
-  config: Record<string, unknown>;
+  config: { [key: string]: unknown };
 
   /**
    * The environment key

@@ -91,7 +91,7 @@ export interface AuditLogEntryListingRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the actions performed and resources acted on in this audit log entry
@@ -173,7 +173,7 @@ export interface AuditLogEntryListingRepCollection {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of audit log entries
@@ -187,7 +187,7 @@ export interface AuthorizedAppDataRep {
    */
   _id?: string;
 
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Whether the application is authorized through SCIM
@@ -211,7 +211,7 @@ export interface MemberDataRep {
    */
   _id?: string;
 
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The member email
@@ -230,7 +230,7 @@ export interface MemberDataRep {
 }
 
 export interface ParentResourceRep {
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The name of the parent resource
@@ -279,7 +279,7 @@ export interface StatementPost {
 }
 
 export interface SubjectDataRep {
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The subject's avatar
@@ -293,7 +293,7 @@ export interface SubjectDataRep {
 }
 
 export interface TargetResourceRep {
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The name of the resource
@@ -309,7 +309,7 @@ export interface TargetResourceRep {
 export interface TokenSummary {
   _id?: string;
 
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The last few characters of the token
@@ -341,7 +341,7 @@ export interface AuditlogRetrieveResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the actions performed and resources acted on in this audit log entry

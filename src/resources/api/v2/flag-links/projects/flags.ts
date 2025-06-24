@@ -96,7 +96,7 @@ export interface FlagLinkRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The time to mark this flag link as associated with the external URL. Defaults to
@@ -127,7 +127,7 @@ export interface FlagLinkRep {
    * this is a flag link for an existing integration. Defined in the integration's
    * <code>manifest.json</code> file under <code>flagLink</code>.
    */
-  _metadata?: Record<string, string>;
+  _metadata?: { [key: string]: string };
 
   /**
    * The description of the flag link
@@ -162,7 +162,7 @@ export namespace FlagLinkRep {
   export interface _Member {
     _id: string;
 
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     firstName?: string;
 
@@ -174,7 +174,7 @@ export interface FlagRetrieveResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of flag links

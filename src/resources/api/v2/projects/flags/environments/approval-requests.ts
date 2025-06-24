@@ -228,7 +228,7 @@ export interface ApprovalRequestRetrieveApprovalRequestsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of approval requests
@@ -331,7 +331,7 @@ export interface ApprovalRequestApprovalRequestsParams {
    * [Update feature flag](https://launchdarkly.com/docs/ld-docs/api/feature-flags/patch-feature-flag)
    * documentation for details on available instructions.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param: Optional comment describing the approval request
@@ -350,7 +350,7 @@ export interface ApprovalRequestApprovalRequestsParams {
    * <code>manifest.json</code> for that integration, at
    * https://github.com/launchdarkly/integration-framework.
    */
-  integrationConfig?: Record<string, unknown>;
+  integrationConfig?: { [key: string]: unknown };
 
   /**
    * Body param: An array of member IDs. These members are notified to review the
