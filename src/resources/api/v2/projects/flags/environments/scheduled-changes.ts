@@ -260,12 +260,12 @@ export interface FeatureFlagScheduledChange {
   /**
    * The actions to perform on the execution date for these scheduled changes
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on any conflicting scheduled changes
@@ -282,7 +282,7 @@ export interface ScheduledChangeRetrieveScheduledChangesResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface ScheduledChangeRetrieveParams {
@@ -323,7 +323,7 @@ export interface ScheduledChangeUpdateParams {
    * with objects that look like <code>{"kind": "update_action"}</code>. Some
    * instructions also require a <code>value</code> field in the array element.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Query param: Whether to succeed (`true`) or fail (`false`) when these new
@@ -388,7 +388,7 @@ export interface ScheduledChangeScheduledChangesParams {
    * <code>{"kind": "scheduled_action"}</code>. Supported scheduled actions are
    * <code>turnFlagOn</code> and <code>turnFlagOff</code>.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Query param: Whether to succeed (`true`) or fail (`false`) when these

@@ -109,7 +109,7 @@ export interface BranchRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * An ID representing the branch HEAD. For example, a commit SHA.
@@ -184,7 +184,7 @@ export interface BranchListResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of branches

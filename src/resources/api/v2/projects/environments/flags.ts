@@ -65,7 +65,7 @@ export interface FlagEvaluateResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the flag evaluations for this context instance
@@ -83,7 +83,7 @@ export namespace FlagEvaluateResponse {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * The value of the flag variation that the context receives. If there is no
@@ -155,7 +155,7 @@ export interface FlagEvaluateParams {
   /**
    * Body param:
    */
-  body: Record<string, unknown>;
+  body: { [key: string]: unknown };
 
   /**
    * Query param: A comma-separated list of filters. Each filter is of the form

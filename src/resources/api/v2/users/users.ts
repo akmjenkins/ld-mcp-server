@@ -76,7 +76,7 @@ export interface UserRecord {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The environment ID
@@ -132,7 +132,7 @@ export namespace UserRecord {
      * Any other custom attributes for this user. Custom attributes contain any other
      * user data that you would like to use to conditionally target your users.
      */
-    custom?: Record<string, unknown>;
+    custom?: { [key: string]: unknown };
 
     /**
      * The user's email

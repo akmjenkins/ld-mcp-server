@@ -156,7 +156,7 @@ export interface ApplicationRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Associated maintainer member or team info for the application
@@ -192,7 +192,7 @@ export namespace ApplicationRep {
     /**
      * The location and content type of related resources
      */
-    _links?: Record<string, StatisticsAPI.Link>;
+    _links?: { [key: string]: StatisticsAPI.Link };
 
     /**
      * A list of the flags that have been evaluated by the application
@@ -239,7 +239,7 @@ export interface ApplicationListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * A list of applications

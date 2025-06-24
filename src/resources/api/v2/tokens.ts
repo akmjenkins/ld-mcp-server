@@ -112,7 +112,7 @@ export interface Token {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Timestamp of when the access token was created
@@ -188,7 +188,7 @@ export interface Token {
 }
 
 export interface TokenListResponse {
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of access tokens

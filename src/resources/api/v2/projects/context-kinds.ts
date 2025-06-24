@@ -52,7 +52,7 @@ export interface ContextKindUpdateResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The status of the create or update operation
@@ -64,7 +64,7 @@ export interface ContextKindRetrieveContextKindsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of context kinds
@@ -112,7 +112,7 @@ export namespace ContextKindRetrieveContextKindsResponse {
     /**
      * The location and content type of related resources
      */
-    _links?: Record<string, StatisticsAPI.Link>;
+    _links?: { [key: string]: StatisticsAPI.Link };
 
     /**
      * Whether the context kind is archived. Archived context kinds are unavailable for

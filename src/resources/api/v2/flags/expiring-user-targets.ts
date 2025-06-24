@@ -153,7 +153,7 @@ export interface ExpiringUserTargetGetResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface ExpiringUserTargetItem {
@@ -221,7 +221,7 @@ export interface ExpiringUserTargetPatchResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of error messages for the failed instructions
@@ -270,7 +270,7 @@ export interface ExpiringUserTargetUpdateParams {
   /**
    * Body param: The instructions to perform when updating
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param: Optional comment describing the change

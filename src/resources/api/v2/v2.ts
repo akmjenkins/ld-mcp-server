@@ -406,11 +406,11 @@ export interface V2RetrieveResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface V2ListResponse {
-  links: Record<string, StatisticsAPI.Link>;
+  links: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface V2RetrieveCallerIdentityResponse {
@@ -452,7 +452,7 @@ export interface V2RetrievePublicIPListResponse {
 }
 
 export interface V2RetrieveTagsResponse {
-  _links: Record<string, V2RetrieveTagsResponse._Links>;
+  _links: { [key: string]: V2RetrieveTagsResponse._Links };
 
   /**
    * List of tags

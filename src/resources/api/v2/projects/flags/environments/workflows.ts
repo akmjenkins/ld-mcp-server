@@ -269,7 +269,7 @@ export interface CustomWorkflowOutput {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The member ID of the maintainer of the workflow. Defaults to the workflow
@@ -568,7 +568,7 @@ export namespace StageOutput {
      * An array of instructions for the stage. Each object in the array uses the
      * semantic patch format for updating a feature flag.
      */
-    instructions: Array<Record<string, unknown>>;
+    instructions: Array<{ [key: string]: unknown }>;
 
     /**
      * The type of action for this stage
@@ -623,7 +623,7 @@ export interface WorkflowListResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of workflows

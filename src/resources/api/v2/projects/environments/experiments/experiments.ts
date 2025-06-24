@@ -574,7 +574,7 @@ export interface DependentMetricOrMetricGroupRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The version ID of the metric or metric group
@@ -624,7 +624,7 @@ export interface Experiment {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The ID of the member who maintains this experiment.
@@ -684,7 +684,7 @@ export interface IterationInput {
   /**
    * Details on the feature flag and targeting rules for this iteration
    */
-  flags: Record<string, IterationInput.Flags>;
+  flags: { [key: string]: IterationInput.Flags };
 
   /**
    * The expected outcome of this experiment
@@ -833,7 +833,7 @@ export interface IterationRep {
   /**
    * Details on the flag used in this experiment
    */
-  flags?: Record<string, IterationRep.Flags>;
+  flags?: { [key: string]: IterationRep.Flags };
 
   /**
    * Snapshot of the layer state on iteration stop, if part of a layer. Otherwise
@@ -900,7 +900,7 @@ export namespace IterationRep {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * The flag version
@@ -963,7 +963,7 @@ export namespace IterationRep {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * A unique key to reference the metric group
@@ -1026,7 +1026,7 @@ export interface MetricV2Rep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The metric key
@@ -1070,7 +1070,7 @@ export interface ExperimentListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The total number of experiments in this project and environment. Does not
@@ -1150,7 +1150,7 @@ export interface ExperimentUpdateParams {
    * with objects that look like <code>{"kind": "update_action"}</code>. Some
    * instructions also require a <code>value</code> field in the array element.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param: Optional comment describing the update
@@ -1209,7 +1209,7 @@ export interface ExperimentIterationsParams {
   /**
    * Body param: Details on the feature flag and targeting rules for this iteration
    */
-  flags: Record<string, ExperimentIterationsParams.Flags>;
+  flags: { [key: string]: ExperimentIterationsParams.Flags };
 
   /**
    * Body param: The expected outcome of this experiment

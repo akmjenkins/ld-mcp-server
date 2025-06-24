@@ -279,7 +279,7 @@ export interface ExpiringTargetGetResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 }
 
 export interface ExpiringTargetPatchResponse {
@@ -291,7 +291,7 @@ export interface ExpiringTargetPatchResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   errors?: Array<ExpiringTargetError>;
 
@@ -306,7 +306,7 @@ export interface PatchFlagsRequest {
   /**
    * The instructions to perform when updating
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Optional comment describing the change
@@ -340,7 +340,7 @@ export interface ExpiringTargetUpdateParams {
   /**
    * Body param: The instructions to perform when updating
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param: Optional comment describing the change

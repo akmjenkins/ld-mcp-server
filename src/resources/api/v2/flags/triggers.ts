@@ -177,7 +177,7 @@ export interface TriggerWorkflowRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Details on the member who maintains this flag trigger
@@ -212,7 +212,7 @@ export interface TriggerWorkflowRep {
   /**
    * Details on the action to perform when triggering
    */
-  instructions?: Array<Record<string, unknown>>;
+  instructions?: Array<{ [key: string]: unknown }>;
 
   /**
    * The unguessable URL for this flag trigger
@@ -227,7 +227,7 @@ export namespace TriggerWorkflowRep {
      * empty or contains invalid JSON, the timestamp is recorded but this field will be
      * empty.
      */
-    jsonBody?: Record<string, unknown>;
+    jsonBody?: { [key: string]: unknown };
 
     /**
      * Timestamp of the incoming trigger webhook
@@ -278,7 +278,7 @@ export interface TriggerUpdateParams {
    * Body param: The instructions to perform when updating. This should be an array
    * with objects that look like <code>{"kind": "trigger_action"}</code>.
    */
-  instructions?: Array<Record<string, unknown>>;
+  instructions?: Array<{ [key: string]: unknown }>;
 }
 
 export interface TriggerDeleteParams {
