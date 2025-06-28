@@ -57,8 +57,10 @@ export const tool: Tool = {
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { featureFlagKey, ...body } = args as any;
-  await client.api.v2.projects.environments.contexts.update(featureFlagKey, body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.projects.environments.contexts
+    .update(featureFlagKey, body)
+    .asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

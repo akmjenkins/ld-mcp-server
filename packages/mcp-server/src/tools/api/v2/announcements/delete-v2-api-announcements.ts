@@ -30,8 +30,8 @@ export const tool: Tool = {
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { announcementId, ...body } = args as any;
-  await client.api.v2.announcements.delete(announcementId);
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.announcements.delete(announcementId).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };
