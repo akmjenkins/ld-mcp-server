@@ -26,8 +26,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
-  await client.api.v2.retrieveOpenAPIJson();
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.retrieveOpenAPIJson().asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

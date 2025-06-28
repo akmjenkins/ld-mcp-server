@@ -44,8 +44,10 @@ export const tool: Tool = {
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { workflowId, ...body } = args as any;
-  await client.api.v2.projects.flags.environments.workflows.delete(workflowId, body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.projects.flags.environments.workflows
+    .delete(workflowId, body)
+    .asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

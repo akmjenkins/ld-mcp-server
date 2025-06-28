@@ -31,8 +31,10 @@ export const tool: Tool = {
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { insightGroupKey, ...body } = args as any;
-  await client.api.v2.engineeringInsights.insights.groups.delete(insightGroupKey);
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.engineeringInsights.insights.groups
+    .delete(insightGroupKey)
+    .asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

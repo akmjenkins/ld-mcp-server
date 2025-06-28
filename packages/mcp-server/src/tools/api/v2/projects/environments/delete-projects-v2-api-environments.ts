@@ -35,8 +35,8 @@ export const tool: Tool = {
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { environmentKey, ...body } = args as any;
-  await client.api.v2.projects.environments.delete(environmentKey, body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.api.v2.projects.environments.delete(environmentKey, body).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };
