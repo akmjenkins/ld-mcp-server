@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_v2_api_applications',
   description:
-    '\nGet a list of applications.\n\n### Expanding the applications response\n\nLaunchDarkly supports expanding the "Get applications" response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `flags` includes details on the flags that have been evaluated by the application\n\nFor example, use `?expand=flags` to include the `flags` field in the response. By default, this field is **not** included in the response.\n',
+    'When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you\'re sure you don\'t need the data.\n\n\nGet a list of applications.\n\n### Expanding the applications response\n\nLaunchDarkly supports expanding the "Get applications" response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `flags` includes details on the flags that have been evaluated by the application\n\nFor example, use `?expand=flags` to include the `flags` field in the response. By default, this field is **not** included in the response.\n',
   inputSchema: {
     type: 'object',
     properties: {

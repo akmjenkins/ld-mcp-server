@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'test-language-mcp/filtering';
 import { asTextContentResult } from 'test-language-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'retrieve_tags_api_v2',
-  description: 'Get a list of tags.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of tags.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    _links: {\n      type: 'object'\n    },\n    items: {\n      type: 'array',\n      description: 'List of tags',\n      items: {\n        type: 'string'\n      }\n    },\n    totalCount: {\n      type: 'integer',\n      description: 'The total number of tags'\n    }\n  },\n  required: [    '_links',\n    'items'\n  ]\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -49,13 +51,19 @@ export const tool: Tool = {
         type: 'string',
         description: 'Return tags with the specified prefix',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asTextContentResult(await client.api.v2.retrieveTags(body));
+  return asTextContentResult(await maybeFilter(args, await client.api.v2.retrieveTags(body)));
 };
 
 export default { metadata, tool, handler };

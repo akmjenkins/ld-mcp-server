@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'retrieve_insights_engineering_insights_v2_api_groups',
   description:
-    'Get insight group\n\n### Expanding the insight group response\n\nLaunchDarkly supports expanding the insight group response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `scores` includes details on all of the scores used in the engineering insights metrics views for this group\n* `environment` includes details on each environment associated with this group\n\nFor example, use `?expand=scores` to include the `scores` field in the response. By default, this field is **not** included in the response.\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet insight group\n\n### Expanding the insight group response\n\nLaunchDarkly supports expanding the insight group response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `scores` includes details on all of the scores used in the engineering insights metrics views for this group\n* `environment` includes details on each environment associated with this group\n\nFor example, use `?expand=scores` to include the `scores` field in the response. By default, this field is **not** included in the response.\n",
   inputSchema: {
     type: 'object',
     properties: {

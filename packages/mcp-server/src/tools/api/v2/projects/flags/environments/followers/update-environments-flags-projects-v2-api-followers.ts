@@ -18,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'update_environments_flags_projects_v2_api_followers',
-  description: 'Add a member as a follower to a flag in a project and environment',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nAdd a member as a follower to a flag in a project and environment\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {}\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -38,6 +39,12 @@ export const tool: Tool = {
         type: 'string',
         description:
           'The memberId of the member to add as a follower of the flag. Reader roles can only add themselves.',
+      },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
   },
