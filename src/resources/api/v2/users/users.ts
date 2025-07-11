@@ -39,16 +39,7 @@ export class Users extends APIResource {
    * Get a user by key. The `user` object contains all attributes sent in `variation`
    * calls for that key.
    *
-   * @example
-   * ```ts
-   * const userRecord = await client.api.v2.users.retrieve(
-   *   'userKey',
-   *   {
-   *     projectKey: 'projectKey',
-   *     environmentKey: 'environmentKey',
-   *   },
-   * );
-   * ```
+   * @deprecated
    */
   retrieve(userKey: string, params: UserRetrieveParams, options?: RequestOptions): APIPromise<UserRecord> {
     const { projectKey, environmentKey } = params;
@@ -65,13 +56,7 @@ export class Users extends APIResource {
    *
    * Delete a user by key.
    *
-   * @example
-   * ```ts
-   * await client.api.v2.users.delete('userKey', {
-   *   projectKey: 'projectKey',
-   *   environmentKey: 'environmentKey',
-   * });
-   * ```
+   * @deprecated
    */
   delete(userKey: string, params: UserDeleteParams, options?: RequestOptions): APIPromise<void> {
     const { projectKey, environmentKey } = params;
@@ -91,7 +76,7 @@ export interface UserRecord {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The environment ID
@@ -147,7 +132,7 @@ export namespace UserRecord {
      * Any other custom attributes for this user. Custom attributes contain any other
      * user data that you would like to use to conditionally target your users.
      */
-    custom?: Record<string, unknown>;
+    custom?: { [key: string]: unknown };
 
     /**
      * The user's email

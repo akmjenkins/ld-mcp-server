@@ -125,7 +125,7 @@ export interface ContextInstances {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An obfuscated string that references the last context instance on the previous
@@ -160,7 +160,7 @@ export namespace ContextInstances {
     /**
      * The location and content type of related resources
      */
-    _links?: Record<string, StatisticsAPI.Link>;
+    _links?: { [key: string]: StatisticsAPI.Link };
 
     /**
      * A list of the context kinds this context was associated with that the SDK

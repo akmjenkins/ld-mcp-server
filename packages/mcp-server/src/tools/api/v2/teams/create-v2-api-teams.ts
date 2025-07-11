@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.teams',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/teams',
+  operationId: 'postTeam',
 };
 
 export const tool: Tool = {
   name: 'create_v2_api_teams',
   description:
-    'Create a team. To learn more, read [Creating a team](https://launchdarkly.com/docs/home/account/create-teams).\n\n### Expanding the teams response\nLaunchDarkly supports four fields for expanding the "Create team" response. By default, these fields are **not** included in the response.\n\nTo expand the response, append the `expand` query parameter and add a comma-separated list with any of the following fields:\n\n* `members` includes the total count of members that belong to the team.\n* `roles` includes a paginated list of the custom roles that you have assigned to the team.\n* `projects` includes a paginated list of the projects that the team has any write access to.\n* `maintainers` includes a paginated list of the maintainers that you have assigned to the team.\n\nFor example, `expand=members,roles` includes the `members` and `roles` fields in the response.\n',
+    'When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you\'re sure you don\'t need the data.\n\nCreate a team. To learn more, read [Creating a team](https://launchdarkly.com/docs/home/account/create-teams).\n\n### Expanding the teams response\nLaunchDarkly supports four fields for expanding the "Create team" response. By default, these fields are **not** included in the response.\n\nTo expand the response, append the `expand` query parameter and add a comma-separated list with any of the following fields:\n\n* `members` includes the total count of members that belong to the team.\n* `roles` includes a paginated list of the custom roles that you have assigned to the team.\n* `projects` includes a paginated list of the projects that the team has any write access to.\n* `maintainers` includes a paginated list of the maintainers that you have assigned to the team.\n\nFor example, `expand=members,roles` includes the `members` and `roles` fields in the response.\n',
   inputSchema: {
     type: 'object',
     properties: {
@@ -88,9 +93,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.api.v2.teams.create(body);
+  return asTextContentResult(await client.api.v2.teams.create(body));
 };
 
 export default { metadata, tool, handler };

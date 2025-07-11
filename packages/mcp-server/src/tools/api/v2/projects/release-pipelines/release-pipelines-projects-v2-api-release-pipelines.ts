@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.release_pipelines',
   operation: 'write',
   tags: [],
+  httpMethod: 'post',
+  httpPath: '/api/v2/projects/{projectKey}/release-pipelines',
+  operationId: 'postReleasePipeline',
 };
 
 export const tool: Tool = {
   name: 'release_pipelines_projects_v2_api_release_pipelines',
   description:
-    'Creates a new release pipeline.\n\nThe first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/ld-docs/api/projects/patch-project) API to set the `defaultReleasePipelineKey`.\n\nYou can create up to 20 release pipelines per project.\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreates a new release pipeline.\n\nThe first release pipeline you create is automatically set as the default release pipeline for your project. To change the default release pipeline, use the [Update project](https://launchdarkly.com/docs/ld-docs/api/projects/patch-project) API to set the `defaultReleasePipelineKey`.\n\nYou can create up to 20 release pipelines per project.\n",
   inputSchema: {
     type: 'object',
     properties: {
@@ -160,9 +165,11 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { projectKey, ...body } = args as any;
-  return client.api.v2.projects.releasePipelines.releasePipelines(projectKey, body);
+  return asTextContentResult(
+    await client.api.v2.projects.releasePipelines.releasePipelines(projectKey, body),
+  );
 };
 
 export default { metadata, tool, handler };

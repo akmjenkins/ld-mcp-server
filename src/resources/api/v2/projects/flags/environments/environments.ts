@@ -252,7 +252,7 @@ export interface EnvironmentMigrationSafetyIssuesParams {
    * Body param: Semantic patch instructions. The same ones that are valid for flags
    * are valid here.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param:

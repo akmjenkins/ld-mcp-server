@@ -136,7 +136,7 @@ export interface BigSegmentStoreIntegration {
    * <code>formVariables</code> field in the corresponding <code>manifest.json</code>
    * for a full list of fields for each integration.
    */
-  config: Record<string, unknown>;
+  config: { [key: string]: unknown };
 
   /**
    * The environment key
@@ -240,7 +240,7 @@ export interface IntegrationDeliveryConfigurationPost {
    * The global integration settings, as specified by the <code>formVariables</code>
    * in the <code>manifest.json</code> for this integration.
    */
-  config: Record<string, unknown>;
+  config: { [key: string]: unknown };
 
   /**
    * Name to identify the integration

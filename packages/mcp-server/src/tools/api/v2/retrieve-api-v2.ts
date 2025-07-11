@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/user-search/{projectKey}/{environmentKey}',
+  operationId: 'getSearchUsers',
 };
 
 export const tool: Tool = {
   name: 'retrieve_api_v2',
   description:
-    '> ### Use contexts instead\n>\n> After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Search for context instances](https://launchdarkly.com/docs/ld-docs/api/contexts/search-context-instances) instead of this endpoint.\n\nSearch users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query.\n\nAn example user attribute filter set is `filter=firstName:Anna,activeTrial:false`. This matches users that have the user attribute `firstName` set to `Anna`, that also have the attribute `activeTrial` set to `false`.\n\nTo paginate through results, follow the `next` link in the `_links` object. To learn more, read [Representations](https://launchdarkly.com/docs/ld-docs/api#representations).\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\n> ### Use contexts instead\n>\n> After you have upgraded your LaunchDarkly SDK to use contexts instead of users, you should use [Search for context instances](https://launchdarkly.com/docs/ld-docs/api/contexts/search-context-instances) instead of this endpoint.\n\nSearch users in LaunchDarkly based on their last active date, a user attribute filter set, or a search query.\n\nAn example user attribute filter set is `filter=firstName:Anna,activeTrial:false`. This matches users that have the user attribute `firstName` set to `Anna`, that also have the attribute `activeTrial` set to `false`.\n\nTo paginate through results, follow the `next` link in the `_links` object. To learn more, read [Representations](https://launchdarkly.com/docs/ld-docs/api#representations).\n",
   inputSchema: {
     type: 'object',
     properties: {
@@ -64,9 +69,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { environmentKey, ...body } = args as any;
-  return client.api.v2.retrieve(environmentKey, body);
+  return asTextContentResult(await client.api.v2.retrieve(environmentKey, body));
 };
 
 export default { metadata, tool, handler };

@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../../';
 import TestLanguage from 'test-language';
@@ -8,11 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.projects.ai_configs',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/projects/{projectKey}/ai-configs',
+  operationId: 'getAIConfigs',
 };
 
 export const tool: Tool = {
   name: 'retrieve_ai_configs_projects_v2_api_ai_configs',
-  description: 'Get a list of all AI Configs in the given project.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of all AI Configs in the given project.",
   inputSchema: {
     type: 'object',
     properties: {
@@ -44,9 +50,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { projectKey, ...body } = args as any;
-  return client.api.v2.projects.aiConfigs.retrieveAIConfigs(projectKey, body);
+  return asTextContentResult(await client.api.v2.projects.aiConfigs.retrieveAIConfigs(projectKey, body));
 };
 
 export default { metadata, tool, handler };

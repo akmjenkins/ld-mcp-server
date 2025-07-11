@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.teams',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/teams/{teamKey}',
+  operationId: 'deleteTeam',
 };
 
 export const tool: Tool = {
   name: 'delete_v2_api_teams',
   description:
-    'Delete a team by key. To learn more, read [Deleting teams](https://launchdarkly.com/docs/home/account/delete-teams).',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nDelete a team by key. To learn more, read [Deleting teams](https://launchdarkly.com/docs/home/account/delete-teams).\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {}\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -21,13 +26,20 @@ export const tool: Tool = {
         type: 'string',
         description: 'The team key',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { teamKey, ...body } = args as any;
-  return client.api.v2.teams.delete(teamKey);
+  const response = await client.api.v2.teams.delete(teamKey).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

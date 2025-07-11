@@ -224,7 +224,7 @@ export interface MetricGroupRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The version of this metric group
@@ -287,7 +287,7 @@ export interface MetricInGroupRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The metric key
@@ -343,7 +343,7 @@ export interface MetricGroupRetrieveMetricGroupsResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   totalCount?: number;
 }

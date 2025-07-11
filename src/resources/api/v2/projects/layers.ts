@@ -205,7 +205,7 @@ export interface LayerRep {
   /**
    * The layer configurations for each requested environment
    */
-  environments?: Record<string, LayerRep.Environments>;
+  environments?: { [key: string]: LayerRep.Environments };
 
   /**
    * The unit of randomization for the layer
@@ -245,7 +245,7 @@ export interface LayerListResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The layers in the project
@@ -286,7 +286,7 @@ export interface LayerUpdateParams {
    * with objects that look like <code>{"kind": "update_action"}</code>. Some
    * instructions also require a <code>value</code> field in the array element.
    */
-  instructions: Array<Record<string, unknown>>;
+  instructions: Array<{ [key: string]: unknown }>;
 
   /**
    * Body param: Optional comment describing the update

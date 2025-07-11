@@ -49,12 +49,12 @@ export interface CodeRefRetrieveExtinctionsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of extinction events
    */
-  items: Record<string, Array<CodeRefRetrieveExtinctionsResponse.Item>>;
+  items: { [key: string]: Array<CodeRefRetrieveExtinctionsResponse.Item> };
 }
 
 export namespace CodeRefRetrieveExtinctionsResponse {

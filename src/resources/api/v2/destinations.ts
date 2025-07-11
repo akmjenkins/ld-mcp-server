@@ -118,7 +118,7 @@ export interface Destination {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An object with the configuration parameters required for the destination type
@@ -147,7 +147,7 @@ export interface DestinationListResponse {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of Data Export destinations

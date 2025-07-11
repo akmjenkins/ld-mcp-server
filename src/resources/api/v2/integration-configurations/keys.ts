@@ -148,7 +148,7 @@ export interface IntegrationConfigurationsRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * A human-friendly name for the integration
@@ -180,7 +180,7 @@ export interface IntegrationConfigurationsRep {
    * <code>formVariables</code> field in the corresponding <code>manifest.json</code>
    * for a full list of fields for each integration.
    */
-  configValues?: Record<string, unknown>;
+  configValues?: { [key: string]: unknown };
 
   /**
    * Whether the integration is currently active
@@ -226,7 +226,7 @@ export interface KeyRetrieveResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of integration configurations
@@ -241,7 +241,7 @@ export interface KeyUpdateParams {
    * at https://github.com/launchdarkly/integration-framework/tree/main/integrations
    * for a full list of fields for the integration you wish to configure.
    */
-  configValues: Record<string, unknown>;
+  configValues: { [key: string]: unknown };
 
   /**
    * The name of the integration configuration

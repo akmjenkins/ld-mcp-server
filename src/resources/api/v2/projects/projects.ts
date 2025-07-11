@@ -274,7 +274,7 @@ export interface Project {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Whether or not flags created in this project are made available to the
@@ -328,7 +328,7 @@ export interface ProjectRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * A list of environments for the project
@@ -376,7 +376,7 @@ export interface ProjectListResponse {
   /**
    * A link to this resource.
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * List of projects.

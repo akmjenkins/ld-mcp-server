@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.deployments',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/engineering-insights/deployments',
+  operationId: 'getDeployments',
 };
 
 export const tool: Tool = {
   name: 'list_engineering_insights_v2_api_deployments',
   description:
-    'Get a list of deployments\n\n### Expanding the deployment collection response\n\nLaunchDarkly supports expanding the deployment collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `pullRequests` includes details on all of the pull requests associated with each deployment\n* `flagReferences` includes details on all of the references to flags in each deployment\n\nFor example, use `?expand=pullRequests` to include the `pullRequests` field in the response. By default, this field is **not** included in the response.\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of deployments\n\n### Expanding the deployment collection response\n\nLaunchDarkly supports expanding the deployment collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `pullRequests` includes details on all of the pull requests associated with each deployment\n* `flagReferences` includes details on all of the references to flags in each deployment\n\nFor example, use `?expand=pullRequests` to include the `pullRequests` field in the response. By default, this field is **not** included in the response.\n",
   inputSchema: {
     type: 'object',
     properties: {
@@ -65,9 +70,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.api.v2.engineeringInsights.deployments.list(body);
+  return asTextContentResult(await client.api.v2.engineeringInsights.deployments.list(body));
 };
 
 export default { metadata, tool, handler };

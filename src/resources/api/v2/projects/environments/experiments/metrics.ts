@@ -22,18 +22,7 @@ export class Metrics extends APIResource {
    * For example, `expand=traffic` includes the `traffic` field for the project in
    * the response.
    *
-   * @example
-   * ```ts
-   * const experimentBayesianResultsRep =
-   *   await client.api.v2.projects.environments.experiments.metrics.retrieveResults(
-   *     'metricKey',
-   *     {
-   *       projectKey: 'projectKey',
-   *       environmentKey: 'environmentKey',
-   *       experimentKey: 'experimentKey',
-   *     },
-   *   );
-   * ```
+   * @deprecated
    */
   retrieveResults(
     metricKey: string,
@@ -52,7 +41,7 @@ export interface ExperimentBayesianResultsRep {
   /**
    * The location and content type of related resources
    */
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   metricSeen?: ExperimentBayesianResultsRep.MetricSeen;
 
@@ -280,7 +269,7 @@ export namespace TreatmentResultRep {
      * of the distribution are 'mu' and 'sigma'. When <code>kind</code> is
      * <code>beta</code>, the parameters of the distribution are 'alpha' and 'beta.'
      */
-    parameters?: Record<string, number>;
+    parameters?: { [key: string]: number };
   }
 
   export interface RelativeDifference {

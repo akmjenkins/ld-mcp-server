@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.integration_configurations',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/integration-configurations/{integrationConfigurationId}',
+  operationId: 'getIntegrationConfiguration',
 };
 
 export const tool: Tool = {
   name: 'retrieve_v2_api_integration_configurations',
   description:
-    'Get integration configuration with the specified ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet integration configuration with the specified ID. (Excludes [persistent store](https://launchdarkly.com/docs/api/persistent-store-integrations-beta) and [flag import configurations](https://launchdarkly.com/docs/api/flag-import-configurations-beta).)",
   inputSchema: {
     type: 'object',
     properties: {
@@ -25,9 +30,11 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { integrationConfigurationId, ...body } = args as any;
-  return client.api.v2.integrationConfigurations.retrieve(integrationConfigurationId);
+  return asTextContentResult(
+    await client.api.v2.integrationConfigurations.retrieve(integrationConfigurationId),
+  );
 };
 
 export default { metadata, tool, handler };

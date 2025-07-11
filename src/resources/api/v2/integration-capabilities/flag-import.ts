@@ -162,7 +162,7 @@ export interface FlagImportIntegration {
    * field in the corresponding <code>manifest.json</code> for a full list of fields
    * for each integration.
    */
-  config: Record<string, unknown>;
+  config: { [key: string]: unknown };
 
   /**
    * The integration key

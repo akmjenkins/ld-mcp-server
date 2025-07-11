@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../';
 import TestLanguage from 'test-language';
@@ -8,12 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/v2/engineering-insights/pull-requests',
+  operationId: 'getPullRequests',
 };
 
 export const tool: Tool = {
   name: 'retrieve_pull_requests_v2_api_engineering_insights',
   description:
-    'Get a list of pull requests\n\n### Expanding the pull request collection response\n\nLaunchDarkly supports expanding the pull request collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `deployments` includes details on all of the deployments associated with each pull request\n* `flagReferences` includes details on all of the references to flags in each pull request\n* `leadTime` includes details about the lead time of the pull request for each stage\n\nFor example, use `?expand=deployments` to include the `deployments` field in the response. By default, this field is **not** included in the response.\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of pull requests\n\n### Expanding the pull request collection response\n\nLaunchDarkly supports expanding the pull request collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `deployments` includes details on all of the deployments associated with each pull request\n* `flagReferences` includes details on all of the references to flags in each pull request\n* `leadTime` includes details about the lead time of the pull request for each stage\n\nFor example, use `?expand=deployments` to include the `deployments` field in the response. By default, this field is **not** included in the response.\n",
   inputSchema: {
     type: 'object',
     properties: {
@@ -74,9 +79,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.api.v2.engineeringInsights.retrievePullRequests(body);
+  return asTextContentResult(await client.api.v2.engineeringInsights.retrievePullRequests(body));
 };
 
 export default { metadata, tool, handler };

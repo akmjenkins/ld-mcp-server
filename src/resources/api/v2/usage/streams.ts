@@ -77,7 +77,7 @@ export interface StreamRetrieveSdkversionsResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, unknown>;
+  _links: { [key: string]: unknown };
 
   /**
    * The list of SDK names and versions

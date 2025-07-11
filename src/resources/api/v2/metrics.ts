@@ -91,7 +91,7 @@ export interface DependentExperimentRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * Timestamp of when the experiment was created
@@ -168,7 +168,7 @@ export interface FlagListingRep {
    */
   name: string;
 
-  _links?: Record<string, StatisticsAPI.Link>;
+  _links?: { [key: string]: StatisticsAPI.Link };
 
   _site?: StatisticsAPI.Link;
 }
@@ -201,7 +201,7 @@ export interface MetricListingRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The version ID of the metric
@@ -342,7 +342,7 @@ export interface MetricRep {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The version ID of the metric
@@ -502,7 +502,7 @@ export interface MetricRep {
   /**
    * For click and pageview metrics, the target URLs
    */
-  urls?: Array<Record<string, unknown>>;
+  urls?: Array<{ [key: string]: unknown }>;
 }
 
 export namespace MetricRep {
@@ -510,7 +510,7 @@ export namespace MetricRep {
     /**
      * The location and content type of related resources
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * A unique key to reference the metric group

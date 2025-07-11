@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'test-language-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../../../../../';
 import TestLanguage from 'test-language';
@@ -8,11 +10,15 @@ export const metadata: Metadata = {
   resource: 'api.v2.engineering_insights.insights.groups',
   operation: 'write',
   tags: [],
+  httpMethod: 'delete',
+  httpPath: '/api/v2/engineering-insights/insights/groups/{insightGroupKey}',
+  operationId: 'deleteInsightGroup',
 };
 
 export const tool: Tool = {
   name: 'delete_insights_engineering_insights_v2_api_groups',
-  description: 'Delete insight group',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nDelete insight group\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {}\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -20,13 +26,22 @@ export const tool: Tool = {
         type: 'string',
         description: 'The insight group key',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
-export const handler = (client: TestLanguage, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { insightGroupKey, ...body } = args as any;
-  return client.api.v2.engineeringInsights.insights.groups.delete(insightGroupKey);
+  const response = await client.api.v2.engineeringInsights.insights.groups
+    .delete(insightGroupKey)
+    .asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

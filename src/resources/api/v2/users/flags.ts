@@ -16,17 +16,7 @@ export class Flags extends APIResource {
    * `false`. The example response indicates that the user `Abbie_Braun` has the
    * `sort.order` flag enabled.
    *
-   * @example
-   * ```ts
-   * const flag = await client.api.v2.users.flags.retrieve(
-   *   'featureFlagKey',
-   *   {
-   *     projectKey: 'projectKey',
-   *     environmentKey: 'environmentKey',
-   *     userKey: 'userKey',
-   *   },
-   * );
-   * ```
+   * @deprecated
    */
   retrieve(
     featureFlagKey: string,
@@ -51,14 +41,7 @@ export class Flags extends APIResource {
    * the user's key before, it calculates the flag values based on the user key
    * alone.
    *
-   * @example
-   * ```ts
-   * await client.api.v2.users.flags.update('featureFlagKey', {
-   *   projectKey: 'projectKey',
-   *   environmentKey: 'environmentKey',
-   *   userKey: 'userKey',
-   * });
-   * ```
+   * @deprecated
    */
   update(featureFlagKey: string, params: FlagUpdateParams, options?: RequestOptions): APIPromise<void> {
     const { projectKey, environmentKey, userKey, ...body } = params;
@@ -77,16 +60,7 @@ export class Flags extends APIResource {
    * enabled and the `alternate.page` flag disabled, and that the user has not been
    * explicitly targeted to receive a particular variation.
    *
-   * @example
-   * ```ts
-   * const flags = await client.api.v2.users.flags.list(
-   *   'userKey',
-   *   {
-   *     projectKey: 'projectKey',
-   *     environmentKey: 'environmentKey',
-   *   },
-   * );
-   * ```
+   * @deprecated
    */
   list(userKey: string, params: FlagListParams, options?: RequestOptions): APIPromise<FlagListResponse> {
     const { projectKey, environmentKey } = params;
@@ -98,7 +72,7 @@ export interface FlagRetrieveResponse {
   /**
    * The location and content type of related resources.
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * The value of the flag variation that the user receives. If there is no defined
@@ -161,12 +135,12 @@ export interface FlagListResponse {
   /**
    * The location and content type of related resources
    */
-  _links: Record<string, StatisticsAPI.Link>;
+  _links: { [key: string]: StatisticsAPI.Link };
 
   /**
    * An array of flag settings for the user
    */
-  items: Record<string, FlagListResponse.Items>;
+  items: { [key: string]: FlagListResponse.Items };
 }
 
 export namespace FlagListResponse {
@@ -174,7 +148,7 @@ export namespace FlagListResponse {
     /**
      * The location and content type of related resources.
      */
-    _links: Record<string, StatisticsAPI.Link>;
+    _links: { [key: string]: StatisticsAPI.Link };
 
     /**
      * The value of the flag variation that the user receives. If there is no defined
