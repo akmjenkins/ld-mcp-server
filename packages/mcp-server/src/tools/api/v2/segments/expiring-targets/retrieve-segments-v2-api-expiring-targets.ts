@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'test-language-mcp/filtering';
 import { asTextContentResult } from 'test-language-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'retrieve_segments_v2_api_expiring_targets',
-  description: "Get a list of a segment's context targets that are scheduled for removal.",
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of a segment's context targets that are scheduled for removal.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/expiring_target_get_response',\n  $defs: {\n    expiring_target_get_response: {\n      type: 'object',\n      properties: {\n        items: {\n          type: 'array',\n          description: 'A list of expiring targets',\n          items: {\n            $ref: '#/$defs/expiring_target'\n          }\n        },\n        _links: {\n          type: 'object',\n          description: 'The location and content type of related resources'\n        }\n      },\n      required: [        'items'\n      ]\n    },\n    expiring_target: {\n      type: 'object',\n      properties: {\n        _id: {\n          type: 'string',\n          description: 'The ID of this expiring target'\n        },\n        _resourceId: {\n          type: 'object',\n          description: 'Details on the segment or flag this expiring target belongs to, its environment, and its project',\n          properties: {\n            environmentKey: {\n              type: 'string',\n              description: 'The environment key'\n            },\n            flagKey: {\n              type: 'string',\n              description: 'Deprecated, use <code>key</code> instead'\n            },\n            key: {\n              type: 'string',\n              description: 'The key of the flag or segment'\n            },\n            kind: {\n              type: 'string',\n              description: 'The type of resource, <code>flag</code> or <code>segment</code>'\n            },\n            projectKey: {\n              type: 'string',\n              description: 'The project key'\n            }\n          },\n          required: []\n        },\n        _version: {\n          type: 'integer',\n          description: 'The version of this expiring target'\n        },\n        contextKey: {\n          type: 'string',\n          description: 'A unique key used to represent the context to be removed'\n        },\n        contextKind: {\n          type: 'string',\n          description: 'The context kind of the context to be removed'\n        },\n        expirationDate: {\n          type: 'integer',\n          description: 'A timestamp for when the target expires'\n        },\n        targetType: {\n          type: 'string',\n          description: 'A segment\\'s target type, <code>included</code> or <code>excluded</code>. Included when expiring targets are updated on a segment.'\n        },\n        variationId: {\n          type: 'string',\n          description: 'A unique ID used to represent the flag variation. Included when expiring targets are updated on a feature flag.'\n        }\n      },\n      required: [        '_id',\n        '_resourceId',\n        '_version',\n        'contextKey',\n        'contextKind',\n        'expirationDate'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -33,13 +35,21 @@ export const tool: Tool = {
         type: 'string',
         description: 'The environment key',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { environmentKey, ...body } = args as any;
-  return asTextContentResult(await client.api.v2.segments.expiringTargets.retrieve(environmentKey, body));
+  return asTextContentResult(
+    await maybeFilter(args, await client.api.v2.segments.expiringTargets.retrieve(environmentKey, body)),
+  );
 };
 
 export default { metadata, tool, handler };

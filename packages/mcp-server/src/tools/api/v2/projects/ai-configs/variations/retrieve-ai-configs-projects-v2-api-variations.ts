@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'test-language-mcp/filtering';
 import { asTextContentResult } from 'test-language-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'retrieve_ai_configs_projects_v2_api_variations',
   description:
-    'Get an AI Config variation by key. The response includes all variation versions for the given variation key.',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet an AI Config variation by key. The response includes all variation versions for the given variation key.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    items: {\n      type: 'array',\n      items: {\n        $ref: '#/$defs/ai_config_variation'\n      }\n    },\n    totalCount: {\n      type: 'integer'\n    }\n  },\n  required: [    'items',\n    'totalCount'\n  ],\n  $defs: {\n    ai_config_variation: {\n      type: 'object',\n      properties: {\n        createdAt: {\n          type: 'integer'\n        },\n        key: {\n          type: 'string'\n        },\n        messages: {\n          type: 'array',\n          items: {\n            $ref: '#/$defs/message'\n          }\n        },\n        model: {\n          type: 'object'\n        },\n        name: {\n          type: 'string'\n        },\n        version: {\n          type: 'integer'\n        },\n        _archivedAt: {\n          type: 'integer'\n        },\n        _links: {\n          type: 'object',\n          properties: {\n            parent: {\n              $ref: '#/$defs/core_link'\n            }\n          },\n          required: [            'parent'\n          ]\n        },\n        _publishedAt: {\n          type: 'integer'\n        },\n        color: {\n          type: 'string'\n        },\n        comment: {\n          type: 'string'\n        },\n        modelConfigKey: {\n          type: 'string'\n        },\n        state: {\n          type: 'string'\n        }\n      },\n      required: [        'createdAt',\n        'key',\n        'messages',\n        'model',\n        'name',\n        'version'\n      ]\n    },\n    message: {\n      type: 'object',\n      properties: {\n        content: {\n          type: 'string'\n        },\n        role: {\n          type: 'string'\n        }\n      },\n      required: [        'content',\n        'role'\n      ]\n    },\n    core_link: {\n      type: 'object',\n      properties: {\n        href: {\n          type: 'string'\n        },\n        type: {\n          type: 'string'\n        }\n      },\n      required: [        'href',\n        'type'\n      ]\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -35,13 +36,21 @@ export const tool: Tool = {
         type: 'string',
         enum: ['beta'],
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: TestLanguage, args: Record<string, unknown> | undefined) => {
   const { variationKey, ...body } = args as any;
-  return asTextContentResult(await client.api.v2.projects.aiConfigs.variations.retrieve(variationKey, body));
+  return asTextContentResult(
+    await maybeFilter(args, await client.api.v2.projects.aiConfigs.variations.retrieve(variationKey, body)),
+  );
 };
 
 export default { metadata, tool, handler };

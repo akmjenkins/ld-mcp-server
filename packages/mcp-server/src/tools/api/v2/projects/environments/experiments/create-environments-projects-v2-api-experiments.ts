@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_environments_projects_v2_api_experiments',
   description:
-    "Create an experiment.\n\nTo run this experiment, you'll need to [create an iteration](https://launchdarkly.com/docs/ld-docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/ld-docs/api/experiments/patch-experiment) with the `startIteration` instruction.\n\nTo learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create).\n",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate an experiment.\n\nTo run this experiment, you'll need to [create an iteration](https://launchdarkly.com/docs/ld-docs/api/experiments/create-iteration) and then [update the experiment](https://launchdarkly.com/docs/ld-docs/api/experiments/patch-experiment) with the `startIteration` instruction.\n\nTo learn more, read [Creating experiments](https://launchdarkly.com/docs/home/experimentation/create).\n",
   inputSchema: {
     type: 'object',
     properties: {

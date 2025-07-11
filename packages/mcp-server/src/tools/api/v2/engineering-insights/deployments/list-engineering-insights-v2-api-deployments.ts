@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_engineering_insights_v2_api_deployments',
   description:
-    'Get a list of deployments\n\n### Expanding the deployment collection response\n\nLaunchDarkly supports expanding the deployment collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `pullRequests` includes details on all of the pull requests associated with each deployment\n* `flagReferences` includes details on all of the references to flags in each deployment\n\nFor example, use `?expand=pullRequests` to include the `pullRequests` field in the response. By default, this field is **not** included in the response.\n',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet a list of deployments\n\n### Expanding the deployment collection response\n\nLaunchDarkly supports expanding the deployment collection response to include additional fields.\n\nTo expand the response, append the `expand` query parameter and include the following:\n\n* `pullRequests` includes details on all of the pull requests associated with each deployment\n* `flagReferences` includes details on all of the references to flags in each deployment\n\nFor example, use `?expand=pullRequests` to include the `pullRequests` field in the response. By default, this field is **not** included in the response.\n",
   inputSchema: {
     type: 'object',
     properties: {
